@@ -26,15 +26,17 @@
 
        <?php
 
-         include '/var/www/config.php';
+        
 
-         $conn = new mysqli($server, $username, $password, $dbname);
+         $conn = new mysqli("dbins1.cebrrxbs8omn.us-east-1.rds.amazonaws.com", "admin", "labuser1234", "db1");
 
          if ($conn->connect_error)
          {
          die("Connection failed: " . $conn->connect_error);
          }
-
+         
+        echo -e "$conn";
+      
          $sql = "SELECT * FROM images";
          $result = $conn->query($sql);
 
